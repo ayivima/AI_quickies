@@ -66,6 +66,6 @@ We can look at it graphically as below:
 Some libraries store images using the format `channels`, `height` and `width`. 
 Therefore, when we are using several libraries together, we can have a problem passing images around, unless we change the format in which image information is stored, to suit a library we want to use at a given time.
 This is what we achieve with transpose. We can use it to flip/rotate the image matrices. As an example, if the format was `H X W X C`, we can get `C X H X W` and vice versa.
-For computers everything becomes a number or math at a time. So, we can, and, use the indices `0`, `1`, `2` to represent the height, width, channels. Then, when we want to change the format to `channels, height, width` we specify the order `2,0,1`.
+For computers everything becomes a number or math at a time. So, we can, and, use the indices `0`, `1`, `2` to represent the `height`, `width`, `channels`. Then, when we want to change the format to `channels`, `height`, `width` we specify the order `2`, `0`, `1`.
 
 ![](/imgs/image_transpose.png)
