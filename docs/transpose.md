@@ -69,3 +69,40 @@ This is what we achieve with transpose. We can use it to flip/rotate the image m
 For computers everything becomes a number or math at a time. So, we can, and, use the indices `0`, `1`, `2` to represent the `height`, `width`, `channels`. Then, when we want to change the format to `channels`, `height`, `width` we specify the order `2`, `0`, `1`.
 
 ![](/imgs/image_transpose.png)
+
+This is demonstrated in code below.
+
+```
+>>>
+>>> image.shape
+(3, 2, 3)
+>>>
+>>> image
+array([[[255,   0,   0],
+        [255,   0,   0]],
+
+       [[  0, 255,   0],
+        [  0, 255,   0]],
+
+       [[  0,   0, 255],
+        [  0,   0, 255]]])
+>>>
+>>> transposed_image = image.transpose(2,0,1)
+>>> transposed_image
+array([[[255, 255],
+        [  0,   0],
+        [  0,   0]],
+
+       [[  0,   0],
+        [255, 255],
+        [  0,   0]],
+
+       [[  0,   0],
+        [  0,   0],
+        [255, 255]]])
+>>>
+>>> transposed_image.shape
+(3, 3, 2)
+>>>
+```
+```
