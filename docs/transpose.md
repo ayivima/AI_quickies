@@ -29,7 +29,7 @@ array([[1, 2, 3],
 How does transpose become useful in image analysis?
 ---------------------------------------------------
 
-We have different ways of storing image information for computers. However, generally, they are stored as big nested matrices which store information on the height, width and channels of the given images.
+We have different ways of storing image information for computers. However, generally, they are stored as big nested matrices which store information on the height, width and [channels](/docs/channels.md) of the given images.
 For example, we can create a simple rectangle having red, blue, and green colors as shown below:
 
 ```
@@ -63,7 +63,7 @@ We can look at it graphically as below:
 
 ![](/imgs/samp_image_transpose2b.png)
 
-Some libraries store images using the format `channels`, `height` and `width`. 
+Some libraries store images using the format `channels`, `height` and `width` (C X H X W). 
 Therefore, when we are using several libraries together, we can have a problem passing images around, unless we change the format in which image information is stored, to suit a library we want to use at a given time.
 This is what we achieve with transpose. We can use it to flip/rotate the image matrices. As an example, if the format was `H X W X C`, we can get `C X H X W` and vice versa.
 For computers everything becomes a number or math at a time. So, we can, and, use the indices `0`, `1`, `2` to represent the `height`, `width`, `channels`. Then, when we want to change the format to `channels`, `height`, `width` we specify the order `2`, `0`, `1`.
